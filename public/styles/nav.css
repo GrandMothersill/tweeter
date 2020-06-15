@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  height: 120px;
+  width: 100vw;
+  background-color: #4056a1;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+  color: #FFFFFF;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav span {
+font-family: 'Bungee', sans-serif;
+font-size: 1.5em;
+}
+
+nav > * {
+  margin: 1.5em;
+}

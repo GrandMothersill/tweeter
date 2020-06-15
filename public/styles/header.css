@@ -1,0 +1,13 @@
+header {
+height: 400px;
+width: 100vw;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #FF8C42;
+background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png");
+}
+
+
+/* 

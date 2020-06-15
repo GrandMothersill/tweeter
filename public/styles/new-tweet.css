@@ -1,0 +1,23 @@
+button {
+  background-color: #4056a1;
+  color: #FFFFFF;
+}
+
+.bottom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: .75em;
+}
+
+#tweet-text {
+  background-color: #f4f1ec;
+  border: transparent;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  border-bottom: solid 2px black;
+  display: flex;
+  width: 80vw;
+  margin: .3em;
+}
