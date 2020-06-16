@@ -48,10 +48,20 @@ margin-bottom: 0em;
 
 article footer {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: flex-start;
   font-size: 60%;
   margin: 1em;
   margin-bottom: 1.5em;
   margin-left: 2em;
+  color: #4056a1;
+}
+
+article footer span {
+  margin-right: auto;
+  color: #545149;
+}
+
+article footer i {
+  margin-right: .9em;
 }
