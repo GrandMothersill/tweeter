@@ -5,10 +5,18 @@ $(document).ready(function() {
   $("#tweet-text").on('keyup', function() {
     let charsLeft = 140 - this.value.length;
 
-    $(this)
-      .closest(".tweet-composer")
-      .find("#char-counter")
-      .text(charsLeft)
+    // $(this)
+    //   .closest(".tweet-composer")
+    //   .find("#char-counter")
+    //   .text(charsLeft)
+    // if (charsLeft < 0) {
+    //   $('#char-counter').css('color', '#FF0000');
+    // } else if (charsLeft >= 0) {
+    //   $('#char-counter').css('color', '#545149');
+    // }
+
+    $('#char-counter').text(charsLeft);
+
     if (charsLeft < 0) {
       $('#char-counter').css('color', '#FF0000');
     } else if (charsLeft >= 0) {

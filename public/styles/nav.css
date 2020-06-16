@@ -10,8 +10,8 @@ nav {
 }
 
 nav span {
-font-family: 'Bungee', sans-serif;
-font-size: 1.5em;
+  font-family: 'Bungee', sans-serif;
+  font-size: 1.5em;
 }
 
 nav > * {
