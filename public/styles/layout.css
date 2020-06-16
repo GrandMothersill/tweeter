@@ -31,7 +31,7 @@ nav {
 main {
   width: 90vw;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   background-color: #f4f1ec;
 }
@@ -39,7 +39,3 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
-
- /* font-family: 'Bungee', cursive;
-font-family: 'Source Sans Pro', sans-serif; */

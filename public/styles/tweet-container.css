@@ -1,0 +1,40 @@
+article {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 90%;
+  border: 4px solid;
+  display: flex;
+  background-color: #f4f1ec;
+  flex-direction: column;
+}
+
+article header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: .75em;
+}
+
+.article-tweet-userhandle {
+  margin-left: auto;
+  color: #D3D3DA;
+}
+
+.article-tweet-content {
+  margin-left: 1em;
+}
+
+article hr {
+border: 2px solid;
+width: 97.5%;
+margin-bottom: 0em;
+}
+
+article footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 60%;
+  margin: 1em;
+  margin-bottom: 1.5em;
+  margin-left: 2em;
+}
