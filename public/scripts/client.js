@@ -69,64 +69,56 @@ const renderTweets = (tweetArr) => {
   }
 };
 
-// Turbo log > shortcut when you highlihg what you want to console.
-// const $tweet = createTweetElement(tweetData);
-// $('#tweets-container').append($tweet);
+// const loadTweets = function() {
+//   //responsible for fetching tweets from the http://localhost:8080/tweets page.
+// }
 
 
 $(document).ready(function() {
   console.log("Client DOM ready to be manipulated")
-  // $('#tweets-container').append("<p>Text.</p>");
-  const $tweet = createTweetElement(tweetData);
-
-  $('#name-click').click(function() {
-    //$('#tweets-container').append($tweet);
-    // createTweetElement(tweetData);
-    console.log("Click registered", $tweet);
-    renderTweets(data);
-  })
-})
 
 
+  $('#the-form').submit(function(evt) {
+    evt.preventDefault();
+    console.log("Submit registered");
+    console.log($(this).serialize());
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $(this).serialize(),
+    })
+      .then(function() {
+        console.log("Hurrah");
+        $('#tweets-container').empty();
+        renderTweets(data);
+      });
+  });
 
-// Test / driver code (temporary). Eventually will get this from the server.
-// const $tweet = createTweetElement(tweetData);
 
-// // Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc
+  $.fn.loadTweets = function() {
+    $.ajax('/tweets', { method: 'GET', dataType: 'JSON' })
+      .then(function(data) {
+        renderTweets(data);
+      })
+  };
+
+  $.fn.loadTweets();
+});
 
 
 
-
-
-// <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-//   <script>
-//     function appendText() {
-//   var txt1 = "<p>Text.</p>";        // Create text with HTML
-//   var txt2 = $("<p></p>").text("Text.");  // Create text with jQuery
-//   var txt3 = document.createElement("p");
-//   txt3.innerHTML = "Text.";         // Create text with DOM
-//   $("body").append(txt1, txt2, txt3);   // Append new elements
-// }
-// </script>
-//   <script>
-//     $(document).ready(function(){
-//       $("#btn1").click(function() {
-//         $("img").before("<b>Before</b>");
+// const loadTweets = $(function() {
+//   const $button = $('#load-more-posts');
+//   $button.on('click', function() {
+//     console.log('Button clicked, performing ajax call...');
+//     $.ajax('more-posts.html', { method: 'GET' })
+//       .then(function(morePostsHtml) {
+//         console.log('Success: ', morePostsHtml);
+//         $button.replaceWith(morePostsHtml);
 //       });
-
-//   $("#btn2").click(function(){
-//       $("img").after("<i>After</i>");
 //   });
 // });
-// </script>
-//   <script>
-//     function afterText() {
-//   var txt1 = "<b>I </b>";           // Create element with HTML
-//   var txt2 = $("<i></i>").text("love ");  // Create with jQuery
-//   var txt3 = document.createElement("b");   // Create with DOM
-//   txt3.innerHTML = "jQuery!";
-//   $("img").after(txt1, txt2, txt3);    // Insert new elements after img
-// }
-// </script>
+
+
+
+// });
