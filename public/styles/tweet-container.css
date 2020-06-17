@@ -7,6 +7,7 @@ article {
   display: flex;
   background-color: #f4f1ec;
   flex-direction: column;
+  margin-bottom: 2em;
 }
 
 article:hover {
