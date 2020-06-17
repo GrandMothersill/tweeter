@@ -21,3 +21,15 @@ button {
   width: 80vw;
   margin: .3em;
 }
+
+.isa_error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px red solid;
+  color: red;
+  background-color: lightpink;
+  margin: 1em;
+  padding: .6em;
+  display: none;
+}
