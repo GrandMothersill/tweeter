@@ -18,11 +18,13 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  font-size: 24px; 
+  /* AASADADSSDSDASDA */
   font-family: 'Bungee', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 }
 
 nav {
@@ -34,9 +36,22 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* align-items: center; */
   background-color: #f4f1ec;
+  margin-left: 3vw;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+
+
+
+ @media only screen and (min-width: 1024px) {
+ main {
+  width: 45vw;
+  float: right;
+  margin-left: 5vw;
+}
+ }

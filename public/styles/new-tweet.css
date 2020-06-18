@@ -18,7 +18,7 @@ button {
   overflow: hidden;
   border-bottom: solid 2px black;
   display: flex;
-  width: 80vw;
+  width: 90%;
   margin: .3em;
 }
 
@@ -36,4 +36,13 @@ button {
   margin: 1em;
   padding: .6em;
   display: none;
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+  .new-tweet {
+    width: 43vw;
+  }
+
 }
