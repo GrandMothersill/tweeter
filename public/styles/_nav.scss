@@ -1,5 +1,6 @@
+$bungee-font: 'Bungee', sans-serif;
+
 nav {
-  /* position: sticky; */
   top: 0;
   display: flex;
   height: 120px;
@@ -9,11 +10,14 @@ nav {
   color: #FFFFFF;
   justify-content: space-between;
   align-items: center;
-}
+  padding-left: 4em;
+  padding-right: 4em;
 
-nav span {
-  font-family: 'Bungee', sans-serif;
+span {
+  font-family: $bungee-font;
   font-size: 1.5em;
+  }
+
 }
 
 nav > * {
@@ -28,10 +32,14 @@ nav > * {
   cursor: pointer;
 }
 
+@mixin distanceFromLowerRight($distance) {
+  right: $distance;
+  bottom: $distance;
+  }
+
 #sticky-button {
   position: fixed;
-  right: 1em;
-  bottom: 1em;
+ @include distanceFromLowerRight(1em);
   border-radius: 50%;
   height: 3.5em;
   width: 3.5em;
@@ -40,5 +48,3 @@ nav > * {
   cursor: pointer; 
   display: none;
 }
-
-/* The bottom button should only display when the user starts to scroll and the nav button should disappear. */

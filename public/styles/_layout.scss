@@ -3,6 +3,11 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+$bungee-font: 'Bungee', sans-serif;
+$source-font: 'Source Sans Pro', sans-serif;
+$light-background: #f4f1ec;
+
 html {
   box-sizing: border-box;
   overflow-x: hidden;
@@ -17,10 +22,9 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px; 
-  /* AASADADSSDSDASDA */
-  font-family: 'Bungee', sans-serif;
+  background-color: $light-background;
+  font-size: 1.5em; 
+  font-family: $bungee-font;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +32,7 @@ body {
 }
 
 nav {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $source-font;
 }
 
 main {
@@ -36,17 +40,13 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
-  background-color: #f4f1ec;
-  margin-left: 3vw;
+  background-color: $light-background;
+  margin-left: 4.5vw;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
-
-
 
  @media only screen and (min-width: 1024px) {
  main {

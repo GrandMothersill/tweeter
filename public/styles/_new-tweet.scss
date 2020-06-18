@@ -1,3 +1,5 @@
+$light-background: #f4f1ec;
+
 button {
   background-color: #4056a1;
   color: #FFFFFF;
@@ -11,7 +13,7 @@ button {
 }
 
 #tweet-text {
-  background-color: #f4f1ec;
+  background-color: $light-background;
   border: transparent;
   outline: none;
   resize: none;

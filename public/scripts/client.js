@@ -58,7 +58,13 @@ const createTweetElement = function(data) {
   <p>${escape(data.content.text)}</p>
   <hr>
   <footer>
-    <span>${escape(data.created_at)}</span>
+
+
+
+    <span>${moment(data.created_at).fromNow()}</span>
+
+
+
     <i class="fa fa-flag" aria-hidden="true"></i>
     <i class="fa fa-retweet" aria-hidden="true"></i>
     <i class="fa fa-heart" aria-hidden="true"></i>
@@ -84,10 +90,18 @@ $(document).ready(function() {
       })
   };
 
+  let shown = false;
+
   $("#nav-new-tweet").on('click', function() {
-    $(".new-tweet").slideDown();
-    $(".new-tweet").css("display", "block");
-    $("#tweet-text").focus()
+    if (!shown) {
+      shown = true;
+      $(".new-tweet").slideDown();
+      $(".new-tweet").css("display", "block");
+      $("#tweet-text").focus()
+    } else {
+      $(".new-tweet").slideUp();
+      shown = false;
+    }
   }),
 
     $('#the-form').submit(function(evt) {
@@ -114,6 +128,7 @@ $(document).ready(function() {
             console.log("Hurrah");
             // $('#tweets-container').empty();
             $('#tweet-text').val('');
+            $('#char-counter').text(140);
             $.fn.loadTweets();
           })
       }
