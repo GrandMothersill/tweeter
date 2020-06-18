@@ -41,7 +41,6 @@ const data = [
   }
 ]
 
-// const $tweetTest = $(`<article class="tweet">Hello world</article>`);
 const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -76,11 +75,11 @@ const renderTweets = (tweetArr) => {
 
 
 $(document).ready(function() {
-  console.log("Client DOM ready to be manipulated")
 
   $.fn.loadTweets = function() {
     $.ajax('/tweets', { method: 'GET', dataType: 'JSON' })
       .then(function(data) {
+        $('#tweets-container').empty();
         renderTweets(data);
       })
   };
@@ -105,8 +104,6 @@ $(document).ready(function() {
         $(".isa_error").text("Tweet must contain under 140 characters");
         $(".isa_error").css("display", "block");
       } else {
-        // console.log(tweetText);
-        // console.log("LENGTH " + tweetText.length);
         $(".isa_error").css("display", "none");
         $.ajax({
           url: '/tweets',
@@ -115,7 +112,7 @@ $(document).ready(function() {
         })
           .then(function() {
             console.log("Hurrah");
-            $('#tweets-container').empty();
+            // $('#tweets-container').empty();
             $('#tweet-text').val('');
             $.fn.loadTweets();
           })
@@ -123,5 +120,5 @@ $(document).ready(function() {
     });
 
 
-  // $.fn.loadTweets();
+  $.fn.loadTweets();
 });
