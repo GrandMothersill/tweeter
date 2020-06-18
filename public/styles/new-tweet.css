@@ -22,6 +22,10 @@ button {
   margin: .3em;
 }
 
+.new-tweet {
+  display: none;
+}
+
 .isa_error {
   display: flex;
   justify-content: center;

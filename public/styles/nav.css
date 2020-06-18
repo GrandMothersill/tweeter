@@ -19,3 +19,11 @@ nav span {
 nav > * {
   margin: 1.5em;
 }
+
+#nav-new-tweet {
+  padding: .5em;
+}
+
+#nav-new-tweet:hover {
+  cursor: pointer;
+}

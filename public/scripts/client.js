@@ -85,36 +85,42 @@ $(document).ready(function() {
       })
   };
 
-  $('#the-form').submit(function(evt) {
-    evt.preventDefault();
-    console.log("Submit registered");
-    $(".isa_error").css("display", "none");
-    let tweetText = $(this).serialize().slice(5)
-    if (tweetText.length === 0) {
-      $(".isa_error").slideDown();
-      $(".isa_error").text("Tweet must contain at least 1 character");
-      $(".isa_error").css("display", "block");
-    } else if (tweetText.length > 140) {
-      $(".isa_error").slideDown();
-      $(".isa_error").text("Tweet must contain under 140 characters");
-      $(".isa_error").css("display", "block");
-    } else {
-      // console.log(tweetText);
-      // console.log("LENGTH " + tweetText.length);
+  $("#nav-new-tweet").on('click', function() {
+    $(".new-tweet").slideDown();
+    $(".new-tweet").css("display", "block");
+    $("#tweet-text").focus()
+  }),
+
+    $('#the-form').submit(function(evt) {
+      evt.preventDefault();
+      console.log("Submit registered");
       $(".isa_error").css("display", "none");
-      $.ajax({
-        url: '/tweets',
-        method: 'POST',
-        data: $(this).serialize(),
-      })
-        .then(function() {
-          console.log("Hurrah");
-          $('#tweets-container').empty();
-          $('#tweet-text').val('');
-          $.fn.loadTweets();
+      let tweetText = $(this).serialize().slice(5)
+      if (tweetText.length === 0) {
+        $(".isa_error").slideDown();
+        $(".isa_error").text("Tweet must contain at least 1 character");
+        $(".isa_error").css("display", "block");
+      } else if (tweetText.length > 140) {
+        $(".isa_error").slideDown();
+        $(".isa_error").text("Tweet must contain under 140 characters");
+        $(".isa_error").css("display", "block");
+      } else {
+        // console.log(tweetText);
+        // console.log("LENGTH " + tweetText.length);
+        $(".isa_error").css("display", "none");
+        $.ajax({
+          url: '/tweets',
+          method: 'POST',
+          data: $(this).serialize(),
         })
-    }
-  });
+          .then(function() {
+            console.log("Hurrah");
+            $('#tweets-container').empty();
+            $('#tweet-text').val('');
+            $.fn.loadTweets();
+          })
+      }
+    });
 
 
   // $.fn.loadTweets();
