@@ -67,9 +67,6 @@ main {
   margin-left: 4.5vw;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
 @media only screen and (min-width: 1024px) {
   main {
     width: 45vw;
@@ -183,6 +180,9 @@ article:hover {
 article:hover .article-tweet-userhandle {
   visibility: visible;
 }
+article:hover i {
+  visibility: visible;
+}
 article header {
   display: flex;
   justify-content: flex-start;
@@ -224,6 +224,7 @@ article footer span {
 }
 article footer i {
   margin-right: 0.9em;
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=output.css.map */

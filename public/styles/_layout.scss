@@ -12,6 +12,7 @@ html {
   box-sizing: border-box;
   overflow-x: hidden;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -44,14 +45,12 @@ main {
   margin-left: 4.5vw;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
  @media only screen and (min-width: 1024px) {
+
  main {
   width: 45vw;
   float: right;
   margin-left: 5vw;
 }
+
  }

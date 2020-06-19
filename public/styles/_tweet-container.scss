@@ -22,6 +22,10 @@ article {
   visibility: visible;
 }
 
+&:hover i {
+  visibility: visible;
+}
+
 header {
   display: flex;
   justify-content: flex-start;
@@ -70,6 +74,7 @@ span {
 
 i {
   margin-right: .9em;
+  visibility: hidden;
 }
 
 }

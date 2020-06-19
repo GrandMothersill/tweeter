@@ -17,6 +17,9 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/output.css" type="text/css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    @media only screen and (max-width: 700px) {}
+  </style>
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -28,28 +31,26 @@
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
+  <!-- Top nav bar -->
   <nav>
     <span>tweeter</span>
-    <p id="nav-new-tweet"><strong>Write</strong> a new tweet</p>
+    <p id="nav-new-tweet"> <strong>Write</strong> a new tweet</p>
   </nav>
   <!-- Page-specific (main) content here -->
-
   <div id="layout-shifter">
     <header id="page-header">
       <div>
         <picture>
-          <source srcset="/images/profile-hex-small.png" media="(max-width:600px)">
+          <source srcset="/images/profile-hex-small.png" media="(max-width:700px)">
           <img src="/images/profile-hex.png">
         </picture>
       </div>
       <br>
       <div>
-        <h2>Your Name</h2>
+        <h2>Laura Jane Grace</h2>
       </div>
     </header>
-
-    <main class="container">
+    <main>
       <section class="new-tweet">
         <div class="isa_error">
         </div>
