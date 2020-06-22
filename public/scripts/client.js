@@ -4,29 +4,29 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
-// creates tweet-container html using input data
+// create tweet-container html using input data
 const createTweetElement = function(data) {
   return `
   <article>
-  <header>
-    <img src="${escape(data.user.avatars)}">
-    <span>${escape(data.user.name)}</span>
-    <span class="article-tweet-userhandle">${escape(data.user.handle)}</span>
-  </header>
-  <p>${escape(data.content.text)}</p>
-  <hr>
-  <footer>
-    <span>${moment(data.created_at).fromNow()}</span>
-    <i class="fa fa-flag" aria-hidden="true"></i>
-    <i class="fa fa-retweet" aria-hidden="true"></i>
-    <i class="fa fa-heart" aria-hidden="true"></i>
-  </footer>
-</article>
+    <header>
+      <img src="${escape(data.user.avatars)}">
+     <span>${escape(data.user.name)}</span>
+      <span class="article-tweet-userhandle">${escape(data.user.handle)}</span>
+   </header>
+   <p>${escape(data.content.text)}</p>
+   <hr>
+   <footer>
+      <span>${moment(data.created_at).fromNow()}</span>
+      <i class="fa fa-flag" aria-hidden="true"></i>
+      <i class="fa fa-retweet" aria-hidden="true"></i>
+      <i class="fa fa-heart" aria-hidden="true"></i>
+    </footer>
+  </article>
     `;
 };
 
-// prepends all tweets of given array
-const renderTweets = (tweetArr) => {
+
+const renderTweets = function(tweetArr) {
   for (let tweet of tweetArr) {
     $('#tweets-container').prepend(createTweetElement(tweet));
   }
@@ -77,7 +77,7 @@ $(document).ready(function() {
     }
   });
 
-  // submitting a new tweet & error handling
+  // submit a new tweet & error handling
   let error = false;
   $('#the-form').submit(function(evt) {
     evt.preventDefault();
@@ -128,6 +128,6 @@ $(document).ready(function() {
     }
   });
 
-  //initial load from database
+  //initial tweet load from database
   $.fn.loadTweets();
 }); 
